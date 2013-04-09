@@ -248,10 +248,10 @@ open source search server through the SolrJ library.
         // look to see if the property has a solrIndex override method
         def overrideMethodName = (prop.name?.length() > 1) ? "indexSolr${prop.name[0].toUpperCase()}${prop.name.substring(1)}" : ""
         def overrideMethod = delegateDomainOjbect.metaClass.pickMethod(overrideMethodName)
+
         if(overrideMethod != null) {
           overrideMethod.invoke(delegateDomainOjbect, doc)
-        } 
-        else if(delegateDomainOjbect."${prop.name}" != null) {
+        } else if(delegateDomainOjbect."${prop.name}" != null) {
           def fieldName = delegateDomainOjbect.solrFieldName(prop.name);
           
           // fieldName may be null if the ignore annotion is used, not the best way to handle but ok for now

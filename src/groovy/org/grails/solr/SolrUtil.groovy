@@ -30,7 +30,7 @@ class SolrUtil {
   
   def static final TYPE_FIELD = "doctype_s"
   def static final TITLE_FIELD = "title_t"
-  def static final IGNORED_PROPS = ["attached", "errors", "constraints", "metaClass", "log", "class", "version", "id", "hasMany", "domainClass"]
+  def static final IGNORED_PROPS = ["attached", "errors", "constraints", "metaClass", "log", "class", "version", "id", "hasMany", "domainClass", "belongsTo"]
   
   /*
     Solr dynamic field datatype suffix mapping
