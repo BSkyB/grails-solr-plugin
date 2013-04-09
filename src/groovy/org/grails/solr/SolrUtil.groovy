@@ -35,17 +35,22 @@ class SolrUtil {
   /*
     Solr dynamic field datatype suffix mapping
   */
-  def static final typeMapping = ["int":"_i", 
-                  "float":"_f", 
+  def static final typeMapping = [
+                  "int":"_i",
+                  "class java.lang.Integer":"_i",
+                  "float":"_f",
+                  "class java.lang.Float":"_f",
                   "long":"_l",
+                  "class java.lang.Long":"_l",
                   "boolean":"_b",
+                  "class java.lang.Boolean":"_b",
                   "double": "_d",
+                  "class java.lang.Double":"_d",
                   "class java.lang.String":"_s",  // _t for text, _s for string
                   "class java.util.Date": "_tdt"] 
               
   def static final typeSuffixes = ["_i", "_s", "_l", "_t", "_b", "_f", "_d", "_dt", "_ti", "_tl", "_tf", "_td", "_tdt", "_pi"]            
-  
-  
+
   static stripFieldName(name){
     //def strippedName = name
     typeSuffixes.each {

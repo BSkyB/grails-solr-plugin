@@ -239,7 +239,7 @@ open source search server through the SolrJ library.
     
     domainDesc.getProperties().each { prop ->
 
-      //println "the type for ${it.name} is ${it.type}"
+      //println "the type for ${prop.name} is ${prop.type}"
       // if the property is a closure, the type (by observation) is java.lang.Object
       // TODO: reconsider passing on all java.lang.Objects
       //println "${it.name} : ${it.type}"
